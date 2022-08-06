@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import * as API from './service/service';
 import { mapper } from './service/mapper';
 import { Application } from './App.styled';
@@ -7,7 +6,7 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ButtonLoad from './Button/Button';
 import LoaderSpinner from './Loader/Loader';
-import Modal from './Modal/Modal';
+import { Modal } from './Modal/Modal';
 
 class App extends Component {
   state = {
@@ -24,6 +23,7 @@ class App extends Component {
     if (searchQuery !== this.state.searchQuery || page !== this.state.page) {
       this.getImages();
     }
+
     if (this.state.page > 1) {
       window.scrollTo({
         top: document.documentElement.scrollHeight,
@@ -72,13 +72,15 @@ class App extends Component {
       .finally(() => this.setState({ isLoading: false }));
   };
 
+  setisLoading = value => {
+    this.setState({ isLoading: value });
+  };
   render() {
     const { images, showModal, isLoading, largeImage, searchQuery } =
       this.state;
 
     return (
       <Application>
-        React homework template
         <Searchbar onSubmit={this.onChangeName}></Searchbar>
         {images.length !== 0 ? (
           <ImageGallery images={images} onOpenModal={this.onClickLargeImage} />
@@ -91,7 +93,7 @@ class App extends Component {
           <Modal
             onClose={this.modalClose}
             imageModal={largeImage.largeImageURL}
-          />
+          ></Modal>
         )}
       </Application>
     );

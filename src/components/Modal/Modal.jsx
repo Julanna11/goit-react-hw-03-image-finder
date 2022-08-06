@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Overlay, ModalWin } from './Modal.styled';
+import { Component } from 'react';
+import { Overlay, ModalWin, Image } from './Modal.styled';
 import { createPortal } from 'react-dom';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
-class Modal extends Component {
+export class Modal extends Component {
   static propTypes = {
     onClose: PropTypes.func.isRequired,
   };
@@ -33,12 +33,10 @@ class Modal extends Component {
     return createPortal(
       <Overlay onClick={this.handleBackdropClick}>
         <ModalWin>
-          <img src={this.props.imageModal} alt="" />
+          <Image src={this.props.imageModal} alt="" />
         </ModalWin>
       </Overlay>,
       modalRoot
     );
   }
 }
-
-export default Modal;

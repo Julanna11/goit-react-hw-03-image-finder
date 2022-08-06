@@ -1,26 +1,15 @@
-// import Loader from 'react-loader-spinner';
-
-import { Audio } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
 
 const LoaderSpinner = () => (
-  // <BallTriangle
-  //   color="#00BFFF"
-  //   height={80}
-  //   width={80}
-  //   radius="9"
-  //   ariaLabel="three-dots-loading"
-  //   wrapperStyle
-  //   wrapperClass
-  // />
-
-  <Audio
-    height="80"
-    width="80"
-    radius="9"
-    color="green"
-    ariaLabel="three-dots-loading"
-    wrapperStyle
-    wrapperClass
+  <BallTriangle
+    height={100}
+    width={100}
+    radius={5}
+    color="#3f51b5"
+    ariaLabel="ball-triangle-loading"
+    wrapperClass={{}}
+    wrapperStyle=""
+    visible={true}
   />
 );
 

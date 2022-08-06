@@ -11,6 +11,7 @@ import {
 class Searchbar extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    searchQuery: PropTypes.string,
   };
 
   state = {
@@ -30,6 +31,7 @@ class Searchbar extends Component {
   };
 
   render() {
+    const { searchQuery } = this.state;
     return (
       <SearchbarHeader>
         <SearchForm onSubmit={this.handleSubmit}>
@@ -42,7 +44,7 @@ class Searchbar extends Component {
             autocomplete="off"
             autoFocus
             placeholder="Search images and photos"
-            value={this.state.searchQuery}
+            value={searchQuery}
             onChange={this.handleChange}
           />
         </SearchForm>

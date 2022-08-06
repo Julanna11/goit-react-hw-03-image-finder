@@ -8,11 +8,13 @@ export const SearchbarHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   min-height: 64px;
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
+  margin-bottom: 24px;
   color: #fff;
   background-color: #3f51b5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -34,7 +36,7 @@ export const ButtonSearchForm = styled.button`
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+  background-image: url('https://www.svgrepo.com/show/19006/search.svg');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -63,7 +65,7 @@ export const ButtonLabelSearchForm = styled.span`
 export const SearchFormIinput = styled.input`
   display: inline-block;
   width: 100%;
-  font: inherit;
+  font-style: inherit;
   font-size: 20px;
   border: none;
   outline: none;
@@ -71,7 +73,7 @@ export const SearchFormIinput = styled.input`
   padding-right: 4px;
 
   &::placeholder {
-    font: inherit;
+    font-style: inherit;
     font-size: 18px;
   }
 `;
