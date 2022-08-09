@@ -14,7 +14,7 @@ const ImageGalleryItem = ({ largeImageURL, webformatURL, onOpenModal }) => {
 };
 
 ImageGalleryItem.propTypes = {
-  webformatURL: PropTypes.string,
+  webformatURL: PropTypes.string.isRequired,
   largeImageURL: PropTypes.string.isRequired,
   onOpenModal: PropTypes.func.isRequired,
 };

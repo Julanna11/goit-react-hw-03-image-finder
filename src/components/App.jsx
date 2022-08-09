@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import * as API from './service/service';
-import { mapper } from './service/mapper';
+import * as API from '../service/service';
+import { mapper } from '../service/mapper';
 import { Application } from './App.styled';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
@@ -17,6 +17,7 @@ class App extends Component {
     largeImage: '',
     showModal: false,
     error: null,
+    per_page: 12,
   };
 
   componentDidUpdate(_, { searchQuery, page }) {
@@ -33,6 +34,9 @@ class App extends Component {
   }
 
   onChangeName = searchQuery => {
+    if (this.state.searchQuery === searchQuery) {
+      return;
+    }
     this.setState({
       searchQuery,
       page: 1,
@@ -75,6 +79,7 @@ class App extends Component {
   setisLoading = value => {
     this.setState({ isLoading: value });
   };
+
   render() {
     const { images, showModal, isLoading, largeImage, searchQuery } =
       this.state;

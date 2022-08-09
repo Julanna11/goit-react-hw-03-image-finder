@@ -11,7 +11,6 @@ import {
 class Searchbar extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    searchQuery: PropTypes.string,
   };
 
   state = {
@@ -27,7 +26,6 @@ class Searchbar extends Component {
     const { searchQuery } = this.state;
 
     this.props.onSubmit(searchQuery);
-    this.setState({ searchQuery: '' });
   };
 
   render() {
